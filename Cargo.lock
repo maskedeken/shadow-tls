@@ -422,16 +422,17 @@ dependencies = [
 [[package]]
 name = "monoio"
 version = "0.1.3"
-source = "git+https://github.com/ihciah/monoio?branch=tfo-mac#805f5d252111cc333316737c43d5f11c27b1a43b"
 dependencies = [
  "auto-const-array",
  "bytes",
+ "cfg-if",
  "fxhash",
  "io-uring",
  "libc",
  "mio",
  "monoio-macros",
  "nix 0.25.1",
+ "passfd",
  "pin-project-lite",
  "socket2",
 ]
@@ -439,7 +440,6 @@ dependencies = [
 [[package]]
 name = "monoio-macros"
 version = "0.0.3"
-source = "git+https://github.com/ihciah/monoio?branch=tfo-mac#805f5d252111cc333316737c43d5f11c27b1a43b"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -449,8 +449,6 @@ dependencies = [
 [[package]]
 name = "monoio-rustls-fork-shadow-tls"
 version = "0.1.1-mod.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "14f265b573714c395dfb0dae82b8090a81922d1399bcb30a210c69cec3b5fd06"
 dependencies = [
  "bytes",
  "monoio",
@@ -505,6 +503,15 @@ name = "overload"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b15813163c1d831bf4a13c3610c05c0d03b39feb07f7e09fa234dac9b15aaf39"
+
+[[package]]
+name = "passfd"
+version = "0.1.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b332c50e4d07c0011fff51ea305374408319908908bc1dbed7a0ffaaf63a8151"
+dependencies = [
+ "libc",
+]
 
 [[package]]
 name = "pin-project-lite"
@@ -722,8 +729,7 @@ checksum = "a507befe795404456341dfab10cef66ead4c041f62b8b11bbb92bffe5d0953e0"
 [[package]]
 name = "socket2"
 version = "0.5.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6d283f86695ae989d1e18440a943880967156325ba025f05049946bff47bcc2b"
+source = "git+https://github.com/rust-lang/socket2.git?rev=6713533ef29a6792f1553c44a8cf580f8cbbed68#6713533ef29a6792f1553c44a8cf580f8cbbed68"
 dependencies = [
  "libc",
  "windows-sys 0.48.0",
